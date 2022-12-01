@@ -20,5 +20,10 @@
 (__.'     `-'                   ;    `.                          `--'
 
 
+           Here you will find my solutions for this year's Advent of Code.
 
-I am using C++.
+I chose Go as my language of choice, as I wanted something simple, but with a robust and
+                complete standard library. The source is hosted on:
+
+                 *- Sourcehut: https://git.sr.ht/~kmaasrud/aoc22 -*
+                 *-  GitHub: https://github.com/kmaasrud/aoc22   -*
