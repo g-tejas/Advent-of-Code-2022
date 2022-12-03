@@ -1,0 +1,48 @@
+#include <iostream>
+#include <set>
+using namespace std;
+
+char find_common_characters(string s1, string s2) {
+	set<char> set1;
+	for (int i = 0; i < s1.size(); i++) {
+		set1.insert(s1[i]);
+	}
+
+	set<char> set2;
+	for (char c : s2){
+		set2.insert(c);
+	}
+
+	set<char> intersection;
+  	// Find the intersection of the two sets
+  	// std::set<char> intersection;
+  	std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(),
+                        std::inserter(intersection, intersection.begin()));
+
+  	// Create a string from the intersection set
+ 	string result;
+  	for (char c : intersection) {
+    	result += c;
+  	}
+  	return result[0];
+}
+
+int main() {
+	string rucksack;
+	int sum_priority = 0;
+
+	while(getline(cin, rucksack)) {
+		string first, second;
+		first = rucksack.substr(0, rucksack.size() / 2);
+		second = rucksack.substr(rucksack.size() / 2);
+		char error;
+		error = find_common_characters(first, second);
+		// cout << error << endl;
+		if (islower(error)) {
+			sum_priority += (int) error - 96;
+		} else {
+			sum_priority += (int) error - 38;
+		}
+	}
+	cout << sum_priority << endl;
+}
